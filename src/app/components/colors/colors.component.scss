@@ -1,4 +1,5 @@
-.container1, .container2 {
+.container1,
+.container2 {
   width: 200px;
   height: 500px;
   margin: 0 auto;
@@ -6,50 +7,51 @@
   flex-direction: column;
 }
 
-.box1, .box2 {
-  width: 100%;
-  flex-grow: 1;
-  transition: all 0.5s ease-in-out;
-}
-
-.box1.box {
+.box-container1 .box1 {
   background-color: #FF5733;
   height: 40%;
 }
 
-.box1.box2 {
+.box-container1 .box2 {
   background-color: #C70039;
   height: 30%;
 }
 
-.box1.box3 {
+.box-container1 .box3 {
   background-color: #900C3F;
   height: 20%;
 }
 
-.box1.box4 {
+.box-container1 .box4 {
   background-color: #581845;
   height: 10%;
 }
 
-.box2.box {
+.box-container2 .box1 {
   background-color: #3498DB;
   height: 30%;
 }
 
-.box2.box2 {
+.box-container2 .box2 {
   background-color: #2ECC71;
   height: 40%;
 }
 
-.box2.box3 {
+.box-container2 .box3 {
   background-color: #F1C40F;
   height: 20%;
 }
 
-.box2.box4 {
+.box-container2 .box4 {
   background-color: #9B59B6;
   height: 10%;
+}
+
+.box-container1 .box,
+.box-container2 .box {
+  width: 100%;
+  flex-grow: 1;
+  transition: all 0.5s ease-in-out;
 }
 
 .hide {

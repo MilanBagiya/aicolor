@@ -1,0 +1,36 @@
+<div class="">
+    <div class="m-4 flex flex-col gap-x-2 gap-y-4 ">
+        <div class="relative ">
+            <button (click)="selectScreenView(ScreenViews.MOBILE_SCREEN)"
+                [ngClass]="selectedScreen === ScreenViews.MOBILE_SCREEN ? '!border !border-slate-300 !bg-slate-300 !text-slate-700 transition-all': ''"
+                class="flex h-max w-full flex-col items-center rounded-lg border border-slate-100 bg-gray-50 p-4 text-xs text-gray-500 hover:bg-slate-200">
+                <img alt="" width="50" height="50" src="https://aicolors.co/assets/mobile.png">
+                <h4 class="mt-3 text-xs">{{ScreenViews.MOBILE_SCREEN}}</h4>
+            </button>
+        </div>
+        <div class="relative ">
+            <button (click)="selectScreenView(ScreenViews.DASHBOARD_SCREEN)"
+                [ngClass]="selectedScreen === ScreenViews.DASHBOARD_SCREEN ? '!border !border-slate-300 !bg-slate-300 !text-slate-700 transition-all': ''"
+                class="flex h-max w-full flex-col items-center rounded-lg border border-slate-100 bg-gray-50 p-4 text-xs text-gray-500 hover:bg-slate-200">
+                <img alt="" width="50" height="50" src="https://aicolors.co/assets/dashboard.png">
+                <h4 class="mt-3 text-xs">{{ScreenViews.DASHBOARD_SCREEN}}</h4>
+            </button>
+        </div>
+        <div class="relative ">
+            <button (click)="selectScreenView(ScreenViews.PORTFOLIO_SCREEN)"
+                [ngClass]="selectedScreen === ScreenViews.PORTFOLIO_SCREEN ? '!border !border-slate-300 !bg-slate-300 !text-slate-700 transition-all': ''"
+                class="flex h-max w-full flex-col items-center rounded-lg border border-slate-100 bg-gray-50 p-4 text-xs text-gray-500 hover:bg-slate-200">
+                <img alt="" width="50" height="50" src="https://aicolors.co/assets/portfolio.png">
+                <h4 class="mt-3 text-xs">{{ScreenViews.PORTFOLIO_SCREEN}}</h4>
+            </button>
+        </div>
+        <div class="relative ">
+            <button (click)="selectScreenView(ScreenViews.LANDING_SCREEN)"
+                [ngClass]="selectedScreen === ScreenViews.LANDING_SCREEN ? '!border !border-slate-300 !bg-slate-300 !text-slate-700 transition-all': ''"
+                class="flex h-max w-full flex-col items-center rounded-lg border border-slate-100 bg-gray-50 p-4 text-xs text-gray-500 hover:bg-slate-200">
+                <img alt="" width="50" height="50" src="https://aicolors.co/assets/landing.png">
+                <h4 class="mt-3 text-xs">{{ScreenViews.LANDING_SCREEN}}</h4>
+            </button>
+        </div>
+    </div>
+</div>

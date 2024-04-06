@@ -1,0 +1,133 @@
+<div class="hidden min-h-screen md:block">
+    <div class="flex flex-row gap-y-2 border-r bg-slate-50 p-4 md:h-screen md:flex-col">
+        <div class="relative flex flex-col"><label for="bg" class="ml-4 mb-1 text-xs text-slate-600">Background
+            </label>
+
+            <input [(colorPicker)]="selectedColor.bg" id="bg" [value]="selectedColor.bg"
+                (colorPickerChange)="onChangeColor($event, '--bg')"
+                class="input input-sm relative !max-w-[9.6rem] border border-slate-300 !bg-white text-sm">
+
+            <span class="pointer-events-none absolute right-2 top-6 h-6 w-6 rounded-full border bg-bg">
+
+            </span>
+        </div>
+        <div class="relative flex flex-col">
+            <label for="bg" class="ml-4 mb-1 text-xs text-slate-600 custom-cursor-default-hover">
+                Primary:
+            </label>
+
+            <input [(colorPicker)]="selectedColor.primaryClear" [value]="selectedColor.primaryClear"
+                (colorPickerChange)="onChangeColor($event, '--bg-focus')" id="primary"
+                class="input input-sm !max-w-[9.6rem] border border-slate-300 !bg-white text-sm">
+
+            <span class="pointer-events-none absolute right-2 top-6 h-6 w-6 rounded-full border bg-primary-clear">
+            </span>
+        </div>
+        <div class="relative flex flex-col">
+            <label for="bg" class="ml-4 mb-1 text-xs text-slate-600">
+                Accent:
+            </label>
+
+            <input [(colorPicker)]="selectedColor.accentClear" [value]="selectedColor.accentClear"
+                (colorPickerChange)="onChangeColor($event, '--accent-clear')" id="accent"
+                class="input input-sm !max-w-[9.6rem] border border-slate-300 !bg-white text-sm">
+
+            <span class="pointer-events-none absolute right-2 top-6 h-6 w-6 rounded-full border bg-accent-clear">
+
+            </span>
+        </div>
+
+        <div class="relative flex flex-col">
+            <label for="bg" class="ml-4 mb-1 text-xs text-slate-600">
+                Text:
+            </label>
+
+
+            <input [(colorPicker)]="selectedColor.clear" [value]="selectedColor.clear"
+                (colorPickerChange)="onChangeColor($event, '--clear')" id="text"
+                class="input input-sm !max-w-[9.6rem] border border-slate-300 !bg-white text-sm">
+
+            <span
+                class="pointer-events-none absolute right-2 top-6 h-6 w-6 rounded-full border border-slate-300 bg-clear">
+            </span>
+        </div>
+
+        <h3 class="mt-8 ml-1 hidden max-w-[9rem] text-xs text-gray-600 md:block">
+            Variations below are automatically adjusted, use only for fine tuning. </h3>
+        <div class="relative flex flex-col">
+
+            <label for="bg" class="ml-3 text-xxs text-slate-600">
+                bg-200:
+            </label>
+
+            <input [(colorPicker)]="selectedColor.bgFocus" [value]="selectedColor.bgFocus"
+                (colorPickerChange)="onChangeColor($event, '--bg-focus')" id="text"
+                class="input input-xs !max-w-[9.6rem] border border-slate-300 !bg-white text-sm text-gray-500">
+
+            <span
+                class="pointer-events-none absolute right-2 top-5 h-4 w-4 rounded-full border border-slate-300 bg-bg-focus"></span>
+        </div>
+        <div class="relative flex flex-col">
+            <label for="bg" class="ml-3 text-xxs text-slate-600">
+                bg-300:
+            </label>
+
+            <input [(colorPicker)]="selectedColor.duller" [value]="selectedColor.duller"
+                (colorPickerChange)="onChangeColor($event, '--duller')" id="text"
+                class="input input-xs !max-w-[9.6rem] border border-slate-300 !bg-white text-sm text-gray-500">
+
+            <span
+                class="pointer-events-none absolute right-2 top-5 h-4 w-4 rounded-full border border-slate-300 bg-duller"></span>
+        </div>
+        <div class="relative flex flex-col">
+            <label for="bg" class="ml-3 text-xxs text-slate-600">primary-200:
+            </label>
+
+            <input [(colorPicker)]="selectedColor.primaryDull" [value]="selectedColor.primaryDull"
+                (colorPickerChange)="onChangeColor($event, '--primary-dull')" id="text"
+                class="input input-xs !max-w-[9.6rem] border border-slate-300 !bg-white text-sm text-gray-500">
+
+            <span
+                class="pointer-events-none absolute right-2 top-5 h-4 w-4 rounded-full border border-slate-300 bg-primary-dull"></span>
+        </div>
+        <div class="relative flex flex-col">
+            <label for="bg" class="ml-3 text-xxs text-slate-600">primary-300:
+            </label>
+
+            <input [(colorPicker)]="selectedColor.primaryVisible" [value]="selectedColor.primaryVisible"
+                (colorPickerChange)="onChangeColor($event, '--primary-visible')" id="text"
+                class="input input-xs !max-w-[9.6rem] border border-slate-300 !bg-white text-sm text-gray-500">
+
+            <span
+                class="pointer-events-none absolute right-2 top-5 h-4 w-4 rounded-full border border-slate-300 bg-primary-visible"></span>
+        </div>
+        <div class="relative flex flex-col">
+            <label for="bg" class="ml-3 text-xxs text-slate-600">accent-200:
+            </label>
+
+            <input [(colorPicker)]="selectedColor.accentDull" [value]="selectedColor.accentDull"
+                (colorPickerChange)="onChangeColor($event, '--accent-dull')" id="text"
+                class="input input-xs !max-w-[9.6rem] border border-slate-300 !bg-white text-sm text-gray-500">
+
+            <span
+                class="pointer-events-none absolute right-2 top-5 h-4 w-4 rounded-full border border-slate-300 bg-accent-dull"></span>
+        </div>
+        <div class="relative flex flex-col">
+            <label for="bg" class="ml-3 text-xxs text-slate-600">text-200:
+            </label>
+
+            <input [(colorPicker)]="selectedColor.dull" [value]="selectedColor.dull"
+                (colorPickerChange)="onChangeColor($event,'--dull')" id="text"
+                class="input input-xs !max-w-[9.6rem] border border-slate-300 !bg-white text-sm text-gray-500">
+
+            <span
+                class="pointer-events-none absolute right-2 top-5 h-4 w-4 rounded-full border border-slate-300 bg-dull"></span>
+        </div>
+        <div class="mt-8 flex flex-col" *ngIf="false">
+            <h2 class="mb-2 max-w-[9rem] text-xs text-gray-600"> Submit Your Color Palette for Approval and
+                Inclusion in our Default Palettes: </h2><button type="button"
+                class="mr-2 mb-2 w-full rounded-lg bg-gradient-to-r from-teal-200 to-lime-200 px-2 py-2 text-center text-sm text-gray-900 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:outline-none focus:ring-4 focus:ring-lime-200 dark:focus:ring-teal-700">
+                Submit for approval </button>
+        </div>
+    </div>
+</div>

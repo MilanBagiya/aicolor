@@ -1,0 +1,6 @@
+<div class="mt-4 flex gap-y-4 gap-x-4 justify-self-center md:flex-col">
+    <div *ngFor="let color of colorsList">
+        <app-colors [scheme]="color" (click)="onClickSetColors(color)" [selectedTheme]="color.id === selectedId">
+        </app-colors>
+    </div>
+</div>

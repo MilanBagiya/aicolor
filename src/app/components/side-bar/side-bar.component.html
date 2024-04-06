@@ -1,0 +1,115 @@
+<div
+    class="sticky bottom-0 left-0 z-10 flex flex-col-reverse bg-slate-100 md:sticky md:top-0 md:h-full md:max-h-screen md:min-h-screen md:flex-row">
+    <div
+        class="flex w-full flex-row border border-gray-200 bg-white text-gray-700 dark:border-gray-600 dark:bg-gray-700 dark:text-white md:w-min md:flex-col [&amp;>*]:flex [&amp;>*]:flex-col">
+
+        <button type="button" (click)="onSelectMenu(menuLinks.NEW)" class="group relative inline-flex w-full items-center border-b 
+            border-gray-200 px-4 py-2 text-sm font-normal hover:text-yellow-600"
+            [ngClass]="selectedMenu === menuLinks.NEW ? 'bg-yellow-100': ''">
+
+            <span class="material-symbols-rounded rounded-full bg-slate-100 p-2 text-slate-600 transition-all
+            duration-500 group-hover:bg-yellow-400 group-hover:text-yellow-100"
+                [ngClass]="selectedMenu === menuLinks.NEW ? 'bg-yellow-400 text-yellow-100': ''">
+                cake </span>
+            <h2 class="mt-1 text-xs text-slate-500 font-medium uppercase"
+                [ngClass]="selectedMenu === menuLinks.NEW ? 'text-yellow-600': ''">
+                {{menuLinks.NEW}}
+            </h2>
+        </button>
+
+        <button type="button" (click)="onSelectMenu(menuLinks.TOP)"
+            [ngClass]="selectedMenu === menuLinks.TOP ? 'bg-green-100': ''" class="group relative inline-flex w-full items-center border-b
+             border-gray-200 px-4 py-2 text-sm font-normal hover:text-slate-700">
+
+            <span class="material-symbols-rounded rounded-full bg-slate-100 
+                p-2 text-slate-600 transition-all duration-500 group-hover:bg-green-400 group-hover:text-green-100"
+                [ngClass]="selectedMenu === menuLinks.TOP ? '!bg-green-400 !text-green-100': ''">
+                trending_up
+            </span>
+
+            <h2 class="mt-1 text-xs text-slate-500  font-medium uppercase"
+                [ngClass]="selectedMenu === menuLinks.TOP ? '!text-green-600': ''">
+                {{menuLinks.TOP}}
+            </h2>
+        </button>
+
+        <button type="button" (click)="onSelectMenu(menuLinks.SAVED)"
+            [ngClass]="selectedMenu === menuLinks.SAVED ? 'bg-pink-100': ''" class="group relative inline-flex w-full items-center border-b
+             border-gray-200 px-4 py-2 text-sm font-normal hover:text-slate-700">
+
+            <span class="material-symbols-rounded rounded-full bg-slate-100 
+                p-2 text-slate-600 transition-all duration-500 group-hover:bg-pink-400 group-hover:text-pink-100"
+                [ngClass]="selectedMenu === menuLinks.SAVED ? 'bg-pink-400 text-pink-100': ''">
+                favorite
+            </span>
+
+            <h2 class="mt-1 text-xs text-slate-500  font-medium uppercase"
+                [ngClass]="selectedMenu === menuLinks.SAVED ? 'text-pink-600': ''">
+                {{menuLinks.SAVED}} </h2>
+        </button>
+
+        <div>
+            <button type="button" (click)="onSelectMenu(menuLinks.VIEWS)"
+                [ngClass]="selectedMenu === menuLinks.VIEWS ? 'bg-cyan-100': ''"
+                class="group relative hidden w-full items-center border-b border-gray-200 px-4 py-2 text-sm font-normal hover:text-cyan-600 lg:block">
+
+                <span class="material-symbols-rounded rounded-full bg-slate-100 
+                    p-2 text-slate-600 transition-all duration-500 group-hover:bg-cyan-400 group-hover:text-cyan-100"
+                    [ngClass]="selectedMenu === menuLinks.VIEWS ? 'bg-cyan-400 text-cyan-100': ''">
+                    view_carousel
+                </span>
+
+                <h2 class="mt-1 text-xs text-slate-500  font-medium uppercase"
+                    [ngClass]="selectedMenu === menuLinks.VIEWS ? 'text-cyan-600': ''">
+                    {{menuLinks.VIEWS}}
+                </h2>
+            </button>
+        </div>
+        <div>
+            <button type="button" (click)="onSelectMenu(menuLinks.EDIT)"
+                [ngClass]="selectedMenu === menuLinks.EDIT ? 'bg-blue-100': ''"
+                class="group relative hidden w-full items-center border-b border-gray-200 px-4 py-2 text-sm font-normal md:block">
+
+                <span [ngClass]="selectedMenu === menuLinks.EDIT ? 'bg-blue-400 text-blue-100': ''"
+                    class="material-symbols-rounded rounded-full bg-slate-100 p-2 text-slate-600 transition-all duration-500 group-hover:bg-blue-400 group-hover:text-blue-100">
+                    edit
+                </span>
+
+                <h2 class="mt-1 text-xs text-slate-500  font-medium uppercase"
+                    [ngClass]="selectedMenu === menuLinks.EDIT ? 'text-blue-600': ''">
+                    {{menuLinks.EDIT}}
+                </h2>
+            </button>
+        </div>
+        <button type="button" (click)="onSelectMenu(menuLinks.HISTORY)"
+            [ngClass]="selectedMenu === menuLinks.HISTORY ? 'bg-purple-100': ''"
+            class="group relative inline-flex w-full items-center border-b border-gray-200 px-4 py-2 text-sm font-normal">
+
+            <span [ngClass]="selectedMenu === menuLinks.HISTORY ? 'bg-purple-400 text-purple-100': ''"
+                class="material-symbols-rounded rounded-full bg-slate-100 p-2 text-slate-600 transition-all duration-500 group-hover:bg-purple-400 group-hover:text-purple-100">
+                history
+            </span>
+
+            <h2 class="mt-1 text-xs text-slate-500  font-medium uppercase"
+                [ngClass]="selectedMenu === menuLinks.HISTORY ? 'text-purple-600': ''">
+                {{menuLinks.HISTORY}}
+            </h2>
+        </button>
+    </div>
+
+    <section class="overflow-scroll">
+        <div>
+            <div [ngSwitch]="selectedMenu">
+                <div *ngSwitchCase="menuLinks.NEW"><app-color-list [isReversed]="true"></app-color-list></div>
+                <div *ngSwitchCase="menuLinks.TOP"><app-color-list></app-color-list></div>
+                <div *ngSwitchCase="menuLinks.SAVED"></div>
+                <div *ngSwitchCase="menuLinks.VIEWS"><app-select-screen #screenView></app-select-screen></div>
+                <div *ngSwitchCase="menuLinks.EDIT"><app-edit-colors></app-edit-colors></div>
+                <div *ngSwitchCase="menuLinks.HISTORY"></div>
+                <div *ngSwitchDefault><app-color-list></app-color-list></div>
+            </div>
+        </div>
+    </section>
+
+
+</div>
