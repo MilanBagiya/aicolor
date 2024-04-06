@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +22,10 @@ import { LandingComponent } from './pages/landing/landing.component';
 import { LgDashboardComponent } from './pages/lg-dashboard/lg-dashboard.component';
 import { MobileAppComponent } from './pages/mobile-app/mobile-app.component';
 import { PortfolioComponent } from './pages/portfolio/portfolio.component';
+import { LoaderInterceptor } from './interceptor/loading.interceptor';
+import { LoaderService } from './services/loader.service';
+import { ApiService } from './services/api.service';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +47,7 @@ import { PortfolioComponent } from './pages/portfolio/portfolio.component';
     SelectScreenComponent,
     ColorListComponent,
     EditColorsComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,7 +55,11 @@ import { PortfolioComponent } from './pages/portfolio/portfolio.component';
     HttpClientModule,
     ColorPickerModule,
   ],
-  providers: [],
+  providers: [
+    LoaderService,
+    ApiService,
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
